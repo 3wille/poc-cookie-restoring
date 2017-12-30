@@ -6,7 +6,8 @@ class DashboardController < ApplicationController
 
   private
 
-  def reset_cookie
+  def reset_cookie4
+    Rails.logger.info("ADDR: #{request.remote_ip}")
   end
 
   def log_or_create_cookie
