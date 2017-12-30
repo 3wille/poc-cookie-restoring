@@ -17,6 +17,16 @@ class DashboardController < ApplicationController
       saved_cookie = Cookie.find_by(cookie_string: reset_cookie)
       saved_cookie.update!(address: request.remote_ip)
     else
+      try_find_cookie
+    end
+  end
+
+  def try_find_cookie
+    old_cookie = Cookie.find_by(address: request.remote_ip)
+    if old_cookie.present?
+      old_cookie.update!(address: request.remote_ip)
+      cookies[:resetter] = old_cookie.cookie_string
+    else
       set_new_cookie
     end
   end
