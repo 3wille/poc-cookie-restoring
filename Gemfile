@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem "slim-rails"
+gem "colorize"
+gem "appengine"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
