@@ -7,13 +7,15 @@ class DashboardController < ApplicationController
   private
 
   def reset_cookie4
-    Rails.logger.info("ADDR: #{request.remote_ip}")
+    Rails.logger.info("ADDR: #{request.remote_ip}".blue)
   end
 
   def log_or_create_cookie
     reset_cookie = cookies[:resetter]
     if reset_cookie.present?
-      Rails.logger.info("Found cookie: #{reset_cookie}")
+      Rails.logger.info("Found cookie: #{reset_cookie}".blue)
+      saved_cookie = Cookie.find_by(cookie_string: reset_cookie)
+      saved_cookie.update!(address: request.remote_ip)
     else
       set_new_cookie
     end
@@ -22,6 +24,7 @@ class DashboardController < ApplicationController
   def set_new_cookie
     new_cookie = Random.rand
     cookies[:resetter] = new_cookie
-    Rails.logger.info("Found no cookie, set: #{new_cookie}")
+    Cookie.create(cookie_string: new_cookie, address: request.remote_ip)
+    Rails.logger.info("Found no cookie, set: #{new_cookie}".blue)
   end
 end
