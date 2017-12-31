@@ -1,24 +1,3 @@
-# README
+# Proof-of-Concept: Cookie Restoring
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a proof of concept developed for my bachelor thesis. It restores cookies, probably deleted by a user, by tracking the IP addresses used for requests. This could be a tracking method used for connections over IPv6 as IPv6 addresses can be considered to be device pseudonyms for a limited time.
