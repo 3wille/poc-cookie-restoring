@@ -5,7 +5,7 @@ This is a proof of concept developed for my bachelor thesis. It restores cookies
 
 ## Installation
 
-This is a Ruby-on-Rails application. To start it, you need a ruby interpreter (preferably MRI > 2.3). You need to install bundler with ``gem install bundler``. After that, in the directory run ``bundle install`` to install all dependencies.
+This is a Ruby-on-Rails application. To start it, you need a ruby interpreter (preferably MRI >= 2.3). You need to install bundler with ``gem install bundler``. After that, in the project directory run ``bundle install`` to install all dependencies.
 
 ## Running
 
